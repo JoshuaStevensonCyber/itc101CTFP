@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flag Input</title>
+  <style>
+    body {
+      font-family: Arial, 'Times New Roman', Times, serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px;
+    }
+
+    .input-box {
+      width: 80%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .submit-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .submit-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>YOU FOUND MY CTF</h2>
+    <form id="flagForm" onsubmit="return validateFlag()">
+      <input type="text" class="input-box" id="flagInput" placeholder="FLAG HERE" name="flag" required>
+      <br>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    function validateFlag() {
+      var userInput = document.getElementById("flagInput").value;
+
+      var correctFlag = "itc101{insert flag here}";
+
+      if (userInput === correctFlag) {
+        alert("YOU DID IT");
+        return true;
+      } else {
+        alert("INCORRECT");
+        return false;
+      }
+    }
+  </script>
+
+</body>
+</html>
